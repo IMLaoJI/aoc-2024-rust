@@ -25,9 +25,9 @@ impl Day {
     /// Creates a [`Day`] from the provided value if it's in the valid range,
     /// returns [`None`] otherwise.
     pub fn new(day: u8) -> Option<Self> {
-        if day == 0 || day > 25 {
-            return None;
-        }
+        // if day == 0 || day > 25 {
+        //     return None;
+        // }
         Some(Self(day))
     }
 
@@ -106,6 +106,7 @@ pub fn all_days() -> AllDays {
 }
 
 /// An iterator that yields every day of advent from the 1st to the 25th.
+#[derive(Debug)]
 pub struct AllDays {
     current: u8,
 }

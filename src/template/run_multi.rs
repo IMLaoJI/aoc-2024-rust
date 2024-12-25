@@ -11,11 +11,14 @@ pub fn run_multi(days_to_run: &HashSet<Day>, is_release: bool, is_timed: bool) -
     let mut timings: Vec<Timing> = Vec::with_capacity(days_to_run.len());
 
     let mut need_space = false;
-
+    println!("Running {:?} days", days_to_run);
+    println!("{:?}",   all_days()
+        .filter(|day| days_to_run.contains(day)).count());
     // NOTE: use non-duplicate, sorted day values.
     all_days()
         .filter(|day| days_to_run.contains(day))
         .for_each(|day| {
+            println!("Running day {}", day);
             if need_space {
                 println!();
             }
